@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Введите входные параметры</h1>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.density.label }}<br>
+            {{ form.density(size=32) }}<br>
+            {% for error in form.density.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.elastic_module.label }}<br>
+            {{ form.elastic_module(size=32) }}<br>
+            {% for error in form.elastic_module.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.n_stronger.label }}<br>
+            {{ form.n_stronger(size=32) }}<br>
+            {% for error in form.n_stronger.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+		<p>
+            {{ form.epoxy.label }}<br>
+            {{ form.epoxy(size=32) }}<br>
+            {% for error in form.epoxy.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+		<p>
+            {{ form.t_flash.label }}<br>
+            {{ form.t_flash(size=32) }}<br>
+            {% for error in form.t_flash.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+		<p>
+            {{ form.surface_density.label }}<br>
+            {{ form.surface_density(size=32) }}<br>
+            {% for error in form.surface_density.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+		<p>
+            {{ form.feed.label }}<br>
+            {{ form.feed(size=32) }}<br>
+            {% for error in form.feed.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+		<p>
+            {{ form.angle.label }}<br>
+            {{ form.angle(size=32) }}<br>
+            {% for error in form.angle.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+		<p>
+            {{ form.step.label }}<br>
+            {{ form.step(size=32) }}<br>
+            {% for error in form.step.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+		<p>
+            {{ form.d_strip.label }}<br>
+            {{ form.d_strip(size=32) }}<br>
+            {% for error in form.d_strip.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+		<p>
+            
+            {{ form.submit(size=32) }}<br>
+            {% for error in form.submit.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+    </form>
+<p>Переданные данные: {{data}}</p>
+<p>Предсказанное соотношение: {{y}}</p>	
+{% endblock %}

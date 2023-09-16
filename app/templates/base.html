@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+    <head>
+        {% if title %}
+        <title>{{ title }} - Выпускная квалификационная работа</title>
+        {% else %}
+        <title>Демонстрация работы нейросети</title>
+        {% endif %}
+    </head>
+    <body>
+        <div>
+            Выпускная квалификационная работа Глухова Ю.А.:
+            <a href="{{ url_for('index') }}">Приветствие</a>
+            <a href="{{ url_for('login') }}">Нейросеть</a>
+        </div>
+        <hr>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </body>
+</html>
