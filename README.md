@@ -1,2 +1,2 @@
 # NN-flask
-Neural networ for prediction matrix of composite material
+Neural network for prediction matrix of composite material
